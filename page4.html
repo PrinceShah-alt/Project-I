@@ -1,0 +1,184 @@
+<html>
+<head>
+      <title>Contact</title>
+    <link rel="stylesheet" href="design.css" type="text/css">
+</head>
+
+<body color="grey">
+    <h1 class="headingtitle">Contact</h1>
+    <div class="Homecontainer">
+        <img src="finale.jpeg" class="photo">
+    </div>
+    <br>
+    <div class="homesome">
+    <div class="home1"><br>
+        <h1>Why choose Us</h1>
+        <p>Discover the extraordinary at Spice & Soul Kitchen. Our commitment to quality and exceptional service makes us your 
+        top choice. Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br>
+        Our spice and Soul community heartly invites you and customers like you. Its our pleasure to serve you and your guests.
+At Spice & Soul, we bring you a perfect blend of bold flavors and heartwarming meals. Our passion for food goes beyond just taste—we
+ believe in crafting dishes that tell a story, celebrate culture, and bring people together.
+
+Here’s why Spice & Soul is your go-to destination for delicious experiences:
+Authentic & Flavorful – We use fresh, high-quality ingredients and traditional recipes to create dishes that excite your taste buds.
+Food with Soul – Every meal is made with love and care, ensuring that every bite is satisfying and memorable.
+Diverse Cuisine – From rich, spicy delicacies to comforting, soul-soothing meals, our menu offers a wide range of options to suit every palate.
+Unmatched Quality & Service – We prioritize excellence in both our food and customer experience, ensuring that you always leave with a smile.
+Join us at Spice & Soul and let every bite take you on a flavorful journey!
+        </p>
+    </div>
+    <div class="home2">
+<h1>Opening Time</h1>
+<p>
+    Monday—Friday: 07:00 Am — 10:00 Pm<br>
+    Saturday-sunday: 07:00 AM— 23:00 Pm<br>
+    <br>
+    <h1>Special Dishes</h1>
+    <ul>
+        <li>Pancakes</li>
+        <li>Pizza Fire and Ice</li>
+        <li>The Tuna Fish</li>
+        <li>Butter chicken</li>
+        <li>Chicken Tikka masala</li>
+        <li>Sel Roti</li>
+        <li>Thukkpa</li>
+        <li>Katti roll</li>
+        <li>Biryani</li>
+
+    </ul>
+
+
+</p>
+</div>
+</div>
+<br>
+
+<div class="formcontainer">
+    <div class="container-time">
+        <h2 class="heading1">Time Open</h2>
+        <h3 class="heading-days">Monday-Friday</h3>
+        <p>7am-11am (Breakfast)</p>
+        <p>11am-10pm (Lunch/Dinner)</p>
+
+        <h3 class="heading-days">Saturday-Sunday</h3>
+        <p>7am-1pm (Breakfast)</p>
+        <p>1pm-10pm (Lunch/Dinner)</p>
+        <br>
+
+        <h4 class="heading-phone">Call us: 1234 45-45-456</h4>
+    </div>
+
+    <div class="container-form">
+        
+        
+        
+        <form action="connect.php" method="get">
+            <h2 class="heading-yellow">RESERVATION ONLINE</h2>
+
+            <div class="form-field">
+                <p>Name:</p>
+                <div>
+                    <input type="text" placeholder="Enter your name" name="username">
+                    <p class="error" id="nameError"></p>
+                </div>
+            </div>
+
+            <div class="form-field">
+                <p>Email:</p>
+                <div>
+                    <input type="email" id="email" placeholder="abc@gmail.com" name="useremail">
+                    <p class="error" id="emailError"></p>
+                </div>
+            </div>
+
+            <div class="form-field">
+                <p>Date:</p>
+                <div>
+                    <input type="date" id="date" name="userdate">
+                    <p class="error" id="dateError"></p>
+                </div>
+            </div>
+
+            <div class="form-field">
+                <p>Time:</p>
+                <div>
+                    <input type="time" id="time"name="usertime">
+                    <p class="error" id="timeError"></p>
+                </div>
+            </div>
+
+            <div class="form-field">
+                <p>No of seats:</p>
+                <select id="seats"name="userseat">
+                    <option value="1">1 person</option>
+                    <option value="2">2 persons</option>
+                    <option value="3">3 persons</option>
+                    <option value="4">4 persons</option>
+                    <option value="5">5 persons</option>
+                    <option value="6">6 persons</option>
+                    <option value="7">7 persons</option>
+                </select>
+            </div>
+
+            <button type="submit"name="buttom" class="btn">SUBMIT</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    document.getElementById("reservationForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent form submission
+
+        let isValid = true;
+
+        // Get form values
+        let name = document.getElementById("name").value.trim();
+        let email = document.getElementById("email").value.trim();
+        let date = document.getElementById("date").value;
+        let time = document.getElementById("time").value;
+
+        // Clear previous error messages
+        document.getElementById("nameError").innerText = "";
+        document.getElementById("emailError").innerText = "";
+        document.getElementById("dateError").innerText = "";
+        document.getElementById("timeError").innerText = "";
+
+        // Name validation
+        if (name === "") {
+            document.getElementById("nameError").innerText = "Name is required.";
+            isValid = false;
+        }
+
+        // Email validation
+        if (email === "" || !email.includes("@")) {
+            document.getElementById("emailError").innerText = "Enter a valid email.";
+            isValid = false;
+        }0
+
+        // Date validation
+        let today = new Date().toISOString().split("T")[0]; // Get today's date
+        if (date === "" || date < today) {
+            document.getElementById("dateError").innerText = "Enter a valid date.";
+            isValid = false;
+        }
+
+        // Time validation
+        if (time === "") {
+            document.getElementById("timeError").innerText = "Time is required.";
+            isValid = false;
+        }
+
+        // If all inputs are valid, show success alert
+     if (isValid) {
+            alert("✅ Reservation submitted successfully!");
+            document.getElementById("reservationForm").reset(); // Reset form
+        }
+    });
+</script>
+<br><br>
+<h1 >Do'nt forget to give a 5-star rating </h1>
+</body>
+</html>
+</body>
+
+</html>
